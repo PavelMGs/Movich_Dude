@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import s from './App.module.scss';
 import Header from './components/Header/Header';
 import Rated from './pages/Rated/Rated';
-import SearchPage from './pages/SearchPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 import { clearState } from './redux/actions/actions';
 import handleFetchData from './utils/fetchData';
 
