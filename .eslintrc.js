@@ -17,9 +17,12 @@ module.exports = {
     'no-console': 'warn',
     'arrow-body-style': 'off',
     'no-unused-vars': 'warn',
-    'camelcase': 'off',
+    camelcase: 'off',
+    'no-else-return': 'off',
+    'no-case-declarations': 'off',
     'react/no-array-index-key': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }],
+    'spaced-comment': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

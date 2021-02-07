@@ -1,18 +1,42 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Button } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route } from 'react-router-dom';
 import s from './App.module.scss';
 import Header from './components/Header/Header';
 import Rated from './pages/Rated/Rated';
 import SearchPage from './pages/SearchPage';
+import { clearState } from './redux/actions/actions';
+import handleFetchData from './utils/fetchData';
+
+export type iGenres = Array<string>;
 
 const App = () => {
-  console.log('####: Log, Dude');
+  const dispatch = useDispatch();
+
+  const [genres, setGenres] = useState<iGenres>();
+
+  useEffect(() => {
+    const API_KEY = '15ba90e32ba5069d47756a81a08ede6d';
+    const urlGenres = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
+
+    handleFetchData(urlGenres).then((responce) => {
+      setGenres(responce.genres);
+    });
+  }, []);
 
   return (
-    <div className={s.root}> 
+    <div className={s.root}>
+      <Button onClick={() => dispatch(clearState())} type="primary">
+        ClearState
+      </Button>
       <Header />
-      <Route path="/" exact component={SearchPage} />
-      <Route path="/rated" component={Rated} />
+      <Route path="/" exact>
+        <SearchPage genres={genres} />
+      </Route>
+      <Route path="/rated">
+        <Rated genres={genres} />
+      </Route>
     </div>
   );
 };
