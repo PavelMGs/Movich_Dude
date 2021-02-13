@@ -1,5 +1,7 @@
-import { Pagination, Spin } from 'antd';
+import { Input, Pagination, Spin } from 'antd';
+import { debounce } from 'lodash';
 import React, { useEffect, useState } from 'react';
+import { API_KEY } from '../../../private';
 import FilmCard from '../../components/FilmCard/FilmCard';
 import { ICard } from '../../interface/interface';
 import handleFetchData from '../../utils/fetchData';
@@ -16,21 +18,40 @@ interface iSearch {
 const SearchPage: React.FC<iSearch> = ({ genres }) => {
   const [list, setList] = useState<IList>();
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState('return');
 
   useEffect(() => {
-    const API_KEY = '15ba90e32ba5069d47756a81a08ede6d';
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=return&page=${page}`;
+    if (query === '') {
+      setQuery('return');
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=return&page=${page}`;
 
-    handleFetchData(url).then((responce) => {
-      setList(responce);
-    });
-  }, [page]);
+      handleFetchData(url).then((responce) => {
+        setList(responce);
+      });
+    } else {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`;
+
+      handleFetchData(url).then((responce) => {
+        setList(responce);
+      });
+    }
+  }, [page, query]);
+
+  const handleQuery = async (e: any) => {
+    setQuery(e.target.value);
+  };
 
   if (!list?.results) {
-    return <Spin />;
+    return (
+      <div>
+        <Input placeholder="Type to search" onChange={debounce(handleQuery, 500)} className={s.input} />
+        <Spin />
+      </div>
+    );
   } else {
     return (
       <div className={s.root}>
+        <Input placeholder="Type to search" onChange={debounce(handleQuery, 500)} className={s.input} />
         {list.results.map((item) => {
           return <FilmCard key={item.id} page="search" data={item} genres={genres || ['null']} />;
         })}

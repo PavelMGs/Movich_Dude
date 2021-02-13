@@ -2,6 +2,7 @@ import { Button } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
+import { API_KEY } from '../private';
 import s from './App.module.scss';
 import Header from './components/Header/Header';
 import Rated from './pages/Rated/Rated';
@@ -17,7 +18,6 @@ const App = () => {
   const [genres, setGenres] = useState<iGenres>();
 
   useEffect(() => {
-    const API_KEY = '15ba90e32ba5069d47756a81a08ede6d';
     const urlGenres = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 
     handleFetchData(urlGenres).then((responce) => {
