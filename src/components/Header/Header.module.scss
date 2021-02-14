@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   position: fixed;
+  top: 0px;
   width: 100%;
   z-index: 5;
 }
@@ -11,10 +12,4 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 420px) {
-  .root {
-    top: 5px;
-  }
 }
