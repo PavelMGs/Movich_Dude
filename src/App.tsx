@@ -1,20 +1,15 @@
-import { Button } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { API_KEY } from '../private';
 import s from './App.module.scss';
 import Header from './components/Header/Header';
 import Rated from './pages/Rated/Rated';
 import SearchPage from './pages/SearchPage/SearchPage';
-import { clearState } from './redux/actions/actions';
 import handleFetchData from './utils/fetchData';
 
 export type iGenres = Array<string>;
 
 const App = () => {
-  const dispatch = useDispatch();
-
   const [genres, setGenres] = useState<iGenres>();
 
   useEffect(() => {
@@ -27,9 +22,9 @@ const App = () => {
 
   return (
     <div className={s.root}>
-      <Button onClick={() => dispatch(clearState())} type="primary">
+      {/* <Button onClick={() => dispatch(clearState())} type="primary">
         ClearState
-      </Button>
+      </Button> */}
       <Header />
       <Route path="/" exact>
         <SearchPage genres={genres} />

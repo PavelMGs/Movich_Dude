@@ -1,113 +1,345 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 310px;
+  height: 245px;
+  background: #ffffff;
+  box-shadow: 0px 0px 25px rgb(165, 165, 165);
+  flex-wrap: wrap;
+  overflow-y: auto;
+  align-content: flex-start;
+  margin-top: 10px;
+}
+
+.poster {
+  margin: 0;
+  height: fit-content;
+}
+
+.poster img {
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 60px;
+  height: 91px;
+}
+
+.film_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 13px;
+  margin-top: 4px;
+  height: 94px;
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 3px;
+  font-weight: 300;
+  line-height: 22px;
+  width: 200px;
+  height: 20;
+  margin-bottom: 7px;
+}
+
+.vote_average {
+  position: absolute;
+  left: 275px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  border: 2px solid #e9d100;
+}
+
+.vote_average span {
+  text-align: center;
+  margin-top: -3px;
+  width: 18px;
+  height: 14px;
+  font-size: 12px;
+}
+
+.release_date {
+  color: #827e7e;
+  margin-top: -4px;
+  margin-bottom: 2px;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.genre_label {
+  border: 1px solid #827e7e;
+  font-size: 9px;
+  color: #0000009c;
+  text-align: center;
+  padding: 1px;
+  width: max-content;
+  margin-right: 2px;
+}
+
+.overview {
+  font-size: 12px;
+  line-height: 22px;
+  margin: 10px;
+  height: 69px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.stars_container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 10px;
+  margin-top: 15px;
+}
+
+.stars {
+  align-self: flex-end;
+}
+
 @media (min-width: 420px) {
-    .root {
-        display: flex;
-        position: relative;
-        width: 387px;
-        height: 245px;
-        background: #FFFFFF;
-        box-shadow: 0px 0px 25px rgb(165, 165, 165);
-        flex-wrap: wrap;
-        overflow-y: auto;
-        align-content: flex-start;
-        margin-top: 10px;
-    }
-    
-    .poster {
-        margin: 0;
-        height: fit-content;
-    }
-    
-    .poster img {
-        margin-top: 6px;
-        margin-left: 10px;
-        width: 60px;
-        height: 91px;
-    }
-    
-    .film_info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-left: 13px;
-        margin-top: 4px;
-        height: 94px;
-    }
-    
-    
-    .title {
-        font-size: 20px;
-        margin-top: 3px;
-        font-weight: 300;
-        line-height: 22px;
-        width: 200px;
-        height: 20;
-        margin-bottom: 7px;
-    }
-    
-    .vote_average {
-        position: absolute;
-        left: 349px;
-        top: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        width: 30px;
-        height: 30px;
-        
-        border-radius: 50%;
-        border: 2px solid #E9D100;
-    }
-    
-    .vote_average span {
-        text-align: center;
-        width: 18px;
-        height: 14px;
-        font-size: 12px;
-    }
-    
-    .release_date {
-        color: #827E7E;
-        margin-top: -4px;
-        margin-bottom: 2px;
-    }
+  .root {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 387px;
+    height: 245px;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgb(165, 165, 165);
+    flex-wrap: wrap;
+    overflow-y: auto;
+    align-content: flex-start;
+    margin-top: 10px;
+  }
 
-    .genres {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+  .poster {
+    margin: 0;
+    height: fit-content;
+  }
 
-    .genre_label {
-        border: 1px solid #827E7E;
-        font-size: 12px;
-        color: #0000009c;
-        text-align: center;
-        padding: 1px;
-        width: max-content;
-        margin-right: 2px;
-    }
-    
-    .overview {
-        font-size: 12px;
-        line-height: 22px;
-        margin: 10px;
-        height: 69px;
-        overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-    }
+  .poster img {
+    margin-top: 6px;
+    margin-left: 10px;
+    width: 60px;
+    height: 91px;
+  }
 
-    .stars_container {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        padding-right: 10px;
-        margin-top: 15px;
-    }
+  .film_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 13px;
+    margin-top: 4px;
+    height: 94px;
+  }
 
-    .stars {
-        align-self: flex-end;
-    }
+  .title {
+    font-size: 20px;
+    margin-top: 3px;
+    font-weight: 300;
+    line-height: 22px;
+    width: 200px;
+    height: 20;
+    margin-bottom: 7px;
+  }
+
+  .vote_average {
+    position: absolute;
+    left: 349px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    border: 2px solid #e9d100;
+  }
+
+  .vote_average span {
+    text-align: center;
+    margin-top: -3px;
+    width: 18px;
+    height: 14px;
+    font-size: 12px;
+  }
+
+  .release_date {
+    color: #827e7e;
+    margin-top: -4px;
+    margin-bottom: 2px;
+  }
+
+  .genres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .genre_label {
+    border: 1px solid #827e7e;
+    font-size: 12px;
+    color: #0000009c;
+    text-align: center;
+    padding: 1px;
+    width: max-content;
+    margin-right: 2px;
+  }
+
+  .overview {
+    font-size: 12px;
+    line-height: 22px;
+    margin: 10px;
+    height: 69px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .stars_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 10px;
+    margin-top: 15px;
+  }
+
+  .stars {
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: 1040px) {
+  .root {
+    display: flex;
+    position: relative;
+    width: 454px;
+    height: 281px;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgb(165, 165, 165);
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .poster {
+    margin: 0;
+    height: fit-content;
+  }
+
+  .poster img {
+    margin: 0;
+    width: 183px;
+    height: 281px;
+  }
+
+  .film_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 13px;
+    margin-top: 4px;
+    height: 94px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-top: 3px;
+    font-weight: 300;
+    line-height: 22px;
+    width: 200px;
+    height: 20;
+    // margin-bottom: 7px;
+  }
+
+  .vote_average {
+    position: absolute;
+    left: 412px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    border: 2px solid #e9d100;
+  }
+
+  .vote_average span {
+    text-align: center;
+    margin-top: -4px;
+    width: 18px;
+    height: 14px;
+    font-size: 12px;
+  }
+
+  .release_date {
+    color: #827e7e;
+    margin-top: -4px;
+    margin-bottom: 2px;
+  }
+
+  .genres {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+
+  .genre_label {
+    border: 1px solid #827e7e;
+    font-size: 12px;
+    color: #0000009c;
+    text-align: center;
+    padding: 1px;
+    width: max-content;
+    margin-right: 2px;
+  }
+
+  .overview {
+    position: absolute;
+    top: 105px;
+    left: 196px;
+    width: 228px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 22px;
+    height: 135px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+
+  .stars_container {
+    display: flex;
+  }
+
+  .stars {
+    position: absolute;
+    top: 235px;
+    left: 196px;
+
+    font-size: 17px;
+  }
 }

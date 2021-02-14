@@ -9,6 +9,7 @@ import s from './SearchPage.module.scss';
 
 interface IList {
   results?: ICard[];
+  total_results?: number;
 }
 
 interface iSearch {
@@ -59,7 +60,7 @@ const SearchPage: React.FC<iSearch> = ({ genres }) => {
           className={s.pagination}
           onChange={(e) => setPage(e)}
           defaultCurrent={1}
-          total={1460}
+          total={list.total_results}
           size="small"
           showSizeChanger={false}
           defaultPageSize={20}

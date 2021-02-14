@@ -1,7 +1,8 @@
 .root {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 75px;
 }
 
 .pagination {
@@ -9,5 +10,20 @@
 }
 
 .input {
-  width: 387px;
+  width: 310px;
+  height: 31.6;
+}
+
+@media (min-width: 420px) {
+  .input {
+    width: 387px;
+    height: 31.6;
+  }
+}
+
+@media (min-width: 1040px) {
+  .input {
+    width: 1010px;
+    height: 31.6;
+  }
 }

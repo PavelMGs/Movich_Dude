@@ -1,5 +1,20 @@
 .root {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 420px) {
+  .root {
+    top: 5px;
+  }
 }

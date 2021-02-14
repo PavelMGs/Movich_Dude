@@ -1,0 +1,12 @@
+.root {
+  margin-top: 75px;
+}
+
+@media (min-width: 1040px) {
+  .root {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
